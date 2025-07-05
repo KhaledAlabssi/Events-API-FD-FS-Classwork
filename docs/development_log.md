@@ -27,6 +27,11 @@
     
   ## Branch: Layout
 - Implementing task 2.2 from the plan file:
-  1. 
+  1. Create layout folder in src
+  2. Create Header and Footer components
+  3. Use daisyUi for footer and header
+  4. Integrate footer and header into the app.jsx
+  5. Created links <Link> from react-router for pages in header
+  
 
 - 
