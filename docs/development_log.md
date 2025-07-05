@@ -16,8 +16,17 @@
     </BrowserRouter>
     ```
     3. Created pages to be associated with routes later (home, create-event, sign up/in)
-    4. stage, commit, and push the changes to github
-    5. Switch to routes branch
+    4. Create Routes and Route for the pages:
+    ```<Routes>
+        <Route path='/' element={<Home />} />
+        </Routes>
+      ```
+    5. Test routes and pages
+    6. stage, commit, and push the changes to github
+    7. Switch to routes branch
     
-  
+  ## Branch: Layout
+- Implementing task 2.2 from the plan file:
+  1. 
+
 - 

@@ -71,8 +71,6 @@ This initial phase is all about setting yourself up for success by thoroughly un
 
 In this phase, you'll focus purely on creating the visual structure of your application without connecting it to live data or complex interactions. Think of it as creating the "bones" and "skin" of your app.
 
-<!-- Current Task -->
-
 
 #### 2.1 Set Up React Router and Placeholder Pages
 
@@ -91,6 +89,8 @@ In this phase, you'll focus purely on creating the visual structure of your appl
   - **`NotFoundPage.jsx`:** A `<div>` with `<h1>404 - Page Not Found</h1>`.
 - **Why it's important:** A working routing system is the backbone of any multi-page application.
 
+
+<!-- Current Task -->
 #### 2.2 Design Global Layout Elements
 
 - **Action:**
