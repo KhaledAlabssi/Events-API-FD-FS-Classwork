@@ -5,4 +5,15 @@
 - Create react app with vite
 - Install and test daisyui
 - Stage and commit changes
-- Create github repo and push to origin
+- Implementing task 2.1 from the plan file:
+    1. update the task by starting with installing react-router: ``` npm i react-router```
+    2. import and use the router in main.jsx file: 
+    ``` import { BrowserRouter } from "react-router";
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    ```
+    3. Created pages to be associated with routes later (home, create-event, sign up/in)
+    4. stage, commit, and push the changes to github
+  
+- 
