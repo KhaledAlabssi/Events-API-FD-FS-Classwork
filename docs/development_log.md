@@ -44,6 +44,13 @@
   5. stage, commit, and push the changes to github
   6. Switch to main branch
 
+    ## Branch: fetch
+  - Implementing task 3.1 form plan:
+    1. creating dummy data and render it from home page
+    2. setup home page with states and use effect
+    3. call the api and store the results in states
+    4. render the dynamic data on home page
+
 
 
 
