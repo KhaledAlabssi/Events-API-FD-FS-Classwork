@@ -1,7 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Route, Routes } from 'react-router'
+import Home from './pages/Home'
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn'
+import EventDetails from './pages/EventDetails'
+import CreateEvent from './pages/CreateEvent'
+import Error from './pages/NotFoundPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,12 +13,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={} />
-        <Route path='/sign-up' element={} />
-        <Route path='/login' element={} />
-        <Route path='/events/:id' element={} />
+        <Route path='/' element={<Home />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/login' element={<SignIn />} />
+        <Route path='/events/:id' element={<EventDetails />} />
 
-        <Route path='create-event' element={} />
+        <Route path='/create-event' element={<CreateEvent />} />
+        <Route path='*' element={<Error />} />
+        
         
       </Routes>
     </>

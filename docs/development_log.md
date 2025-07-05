@@ -1,3 +1,5 @@
+## Branch: main
+
 - Read and understand the project requirments
 - Clone, Setup, and test the API project locally
 - Using detailed implementaion plan from Farida "https://github.com/FaridaBarkenkhoyeva/instructionsEventProject"
@@ -15,5 +17,7 @@
     ```
     3. Created pages to be associated with routes later (home, create-event, sign up/in)
     4. stage, commit, and push the changes to github
+    5. Switch to routes branch
+    
   
 - 
