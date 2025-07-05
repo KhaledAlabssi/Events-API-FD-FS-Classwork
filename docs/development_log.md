@@ -1,0 +1,8 @@
+- Read and understand the project requirments
+- Clone, Setup, and test the API project locally
+- Using detailed implementaion plan from Farida "https://github.com/FaridaBarkenkhoyeva/instructionsEventProject"
+- Create wireframe
+- Create react app with vite
+- Install and test daisyui
+- Stage and commit changes
+- Create github repo and push to origin
