@@ -23,7 +23,7 @@
       ```
     5. Test routes and pages
     6. stage, commit, and push the changes to github
-    7. Switch to routes branch
+    7. Switch to main branch
     
   ## Branch: Layout
 - Implementing task 2.2 from the plan file:
@@ -32,6 +32,21 @@
   3. Use daisyUi for footer and header
   4. Integrate footer and header into the app.jsx
   5. Created links <Link> from react-router for pages in header
+  6. stage, commit, and push the changes to github
+  7. Switch to main branch
+
+  ## Branch: Components
+  - Implementing task 2.3 form plan:
+  1. Creating a showcase example 'button' in components folder
+  2. Create eventCard components with props and test it from home page
+  3. Create auth form in components for login and register "props needs to be updated later"
+  4. Style auth pages
+  5. stage, commit, and push the changes to github
+  6. Switch to main branch
+
+
+
+
   
 
 - 

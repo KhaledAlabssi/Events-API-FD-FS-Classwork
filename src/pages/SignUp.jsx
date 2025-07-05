@@ -1,7 +1,10 @@
 import React from 'react'
+import AuthForm from '../components/AuthForm'
 
 export default function SignUp() {
   return (
-    <div>SignUp</div>
+    <div className='h-[550px]'>
+    
+        <AuthForm /></div>
   )
 }

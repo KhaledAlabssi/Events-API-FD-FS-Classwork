@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
+import Button, { ButtonPrimary } from "../components/Button";
+
 
 export default function Header() {
   return (
@@ -8,7 +10,10 @@ export default function Header() {
         <Link className="btn btn-ghost text-xl" to={"/"}>
             Event App
         </Link>
-        
+        <Button btnContent={"hi normal"} />
+        <ButtonPrimary btnContent={"himal"} />
+
+
       </div>
       <div className="flex-none">
         <ul className="flex  gap-2 px-1">
