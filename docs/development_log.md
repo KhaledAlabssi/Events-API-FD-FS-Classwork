@@ -58,7 +58,8 @@
   1. create protected route 'nested'
   2. craete protectedRoute component in components folder
   3. assign create-event to protectedRoute component
-  
+  4. get token from api/auth/login call
+
 
 
 

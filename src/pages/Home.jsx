@@ -42,7 +42,8 @@ const [events, setEvents] = useState([])
 
 useEffect(() => {
 
-  axios("http://localhost:3001/api/events").then(x => setEvents(x.data.results)
+  axios("http://localhost:3001/api/events").then(x => console.log(x.data)
+  (x.data.results)
   )
 
 },[])
