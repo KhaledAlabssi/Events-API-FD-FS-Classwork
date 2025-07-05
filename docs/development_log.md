@@ -48,8 +48,9 @@
   - Implementing task 3.1 form plan:
     1. creating dummy data and render it from home page
     2. setup home page with states and use effect
-    3. call the api and store the results in states
-    4. render the dynamic data on home page
+    3. install axios: npm i axios
+    4. call the api and store the results in states
+    5. render the dynamic data on home page
 
 
 
