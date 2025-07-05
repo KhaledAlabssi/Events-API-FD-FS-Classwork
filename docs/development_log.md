@@ -32,6 +32,13 @@
   3. Use daisyUi for footer and header
   4. Integrate footer and header into the app.jsx
   5. Created links <Link> from react-router for pages in header
+  6. stage, commit, and push the changes to github
+  7. Switch to routes branch
+
+  ## Branch: Components
+  - Implementing task 2.3 form plan:
+  1. Creating a showcase example 'button' in components folder
+  
   
 
 - 

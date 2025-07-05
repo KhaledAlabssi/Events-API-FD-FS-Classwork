@@ -89,8 +89,6 @@ In this phase, you'll focus purely on creating the visual structure of your appl
   - **`NotFoundPage.jsx`:** A `<div>` with `<h1>404 - Page Not Found</h1>`.
 - **Why it's important:** A working routing system is the backbone of any multi-page application.
 
-
-<!-- Current Task -->
 #### 2.2 Design Global Layout Elements
 
 - **Action:**
@@ -110,6 +108,10 @@ In this phase, you'll focus purely on creating the visual structure of your appl
   - **`App.jsx`:** Renders `<Header />` and `<Footer />` around the `<Routes />` component.
 - **Why it's important:** This creates a consistent look and feel and navigational structure across your application.
 
+
+
+
+<!-- Current Task -->
 #### 2.3 Build Reusable Static UI Components
 
 - **Action:**
