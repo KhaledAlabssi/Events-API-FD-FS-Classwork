@@ -38,7 +38,9 @@
   ## Branch: Components
   - Implementing task 2.3 form plan:
   1. Creating a showcase example 'button' in components folder
+  2. Create eventCard components with props and test it from home page
   
+
   
 
 - 
