@@ -8,6 +8,7 @@ import CreateEvent from "./pages/CreateEvent";
 import Error from "./pages/NotFoundPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,8 +21,17 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/events/:id" element={<EventDetails />} />
-
-        <Route path="/create-event" element={<CreateEvent />} />
+        
+        
+        
+        
+        <Route path="/create-event" element={<ProtectedRoute />}>
+        
+          <Route index element={<CreateEvent />} />
+        </Route>
+       
+       
+       
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

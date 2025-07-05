@@ -51,6 +51,14 @@
     3. install axios: npm i axios
     4. call the api and store the results in states
     5. render the dynamic data on home page
+    6. CUT THE IMPLEMENTATION AND JUMP TO AUTH-INTRO BRANCH & TASK
+
+## Branch: authIntro:
+- Implementing fast introduction into auth with routes and api
+  1. create protected route 'nested'
+  2. craete protectedRoute component in components folder
+  3. assign create-event to protectedRoute component
+  
 
 
 
