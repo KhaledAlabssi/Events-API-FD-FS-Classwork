@@ -59,6 +59,21 @@
   2. craete protectedRoute component in components folder
   3. assign create-event to protectedRoute component
   4. get token from api/auth/login call
+  5. create (temp) auth state 
+  6. update auth state and allow users into create-event if got token
+
+## Branch: main:
+- Create auth form and handle api reqeusts and LS management accordingly
+  1. create auth form and email and password inputs
+  2. create onSubmit form and test its inputs values
+  3. move the API requets handler and auth state management from protected routes component to AuthForm component
+
+## Branch: main:
+- save token in LS and create global state for auth management
+- update state and LS upon successful login request
+- update and integrate protected routes funtionality with Auth form component
+- test stand-alone "auth validation" on signle page (events/:id)
+
 
 
 
