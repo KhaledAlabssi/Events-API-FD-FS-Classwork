@@ -13,9 +13,14 @@ import { FaAdjust } from "react-icons/fa";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [isAuth, setIsAuth] = useState(false)
 
   return (
     <div className="">
+      {isAuth ? 
+<div className="badge badge-success">Logged In</div>: 
+<div className="badge badge-error ">Logged Out</div>}
+
       <Header />
 
 
@@ -23,9 +28,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/login" element={<SignIn />} />
+        <Route path="/login" element={<SignIn setIsAuth={setIsAuth}/>} />
         <Route path="/events/:id" element={<EventDetails />} />
-        <Route path="/create-event" element={<ProtectedRoute />}>
+        <Route path="/create-event" element={<ProtectedRoute isAuth={isAuth} />}>
         
           <Route index element={<CreateEvent />} />
         </Route>

@@ -22,6 +22,7 @@ export default function Header() {
           </li>
             <Link className="btn btn-primary" to={"/sign-up"}>sign-up</Link>
             <Link className="btn btn-primary" to={"/create-event"}>create-event</Link>
+            <Link className="btn btn-primary" to={"/events/22"}>An Event</Link>
             
           
         </ul>

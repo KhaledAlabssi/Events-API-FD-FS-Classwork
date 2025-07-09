@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
 import Alert from "./Alert";
 
-export default function ProtectedRoute() {
+export default function ProtectedRoute({isAuth}) {
   
   // const [isUser, setIsUser] = useState(false)
   // const [isError, setIsError] = useState(false)
@@ -41,6 +41,6 @@ export default function ProtectedRoute() {
   // if (loading) return <p>Loading...</p>;
   // if (isError) return <Alert content={"Please check your email and password input and try again after a month!"}/>
   return (
-    <div>{isUser ? <Outlet /> : <Navigate to={"/login"} />}</div>
+    <div>{isAuth ? <Outlet /> : <Navigate to={"/login"} />}</div>
   );
 }

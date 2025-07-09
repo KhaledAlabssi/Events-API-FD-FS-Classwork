@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-export default function AuthForm() {
+export default function AuthForm({setIsAuth}) {
   const [isRegiter, setIsRegiter] = useState(false);
 
   const navigate = useNavigate()
@@ -20,9 +20,13 @@ export default function AuthForm() {
       .then((x) => {
         if(x.data.token){
           console.log(x.data.token);
-          console.log("Hello guys!");
 
-          navigate('/events/sdss')
+          // save token to LS
+          localStorage.setItem("userToken", JSON.stringify(x.data.token))
+          setIsAuth(true)
+          // console.log("Hello guys!");
+
+          // navigate('/events/sdss')
           
           
           // setIsUser(true)
