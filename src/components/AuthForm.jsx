@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { useAppContext } from "../context/appContext";
 
 export default function AuthForm() {
-  const { setIsAuth } = useAppContext();
+  const { setIsAuth, showToast } = useAppContext();
 
   const navigate = useNavigate();
   function submitHandler(e) {
@@ -23,6 +23,7 @@ export default function AuthForm() {
           localStorage.setItem("userToken", JSON.stringify(x.data.token));
 
           setIsAuth(true);
+          showToast("Welcome to you Event App!")
 
           navigate("/create-event");
         }

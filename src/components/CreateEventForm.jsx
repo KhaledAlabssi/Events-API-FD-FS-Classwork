@@ -11,7 +11,7 @@ import { useAppContext } from "../context/appContext";
 //   "longitude": 49.01438194665317
 // }
 export default function CreateEventForm() {
-  const { getEvents } = useAppContext();
+  const { getEvents, showToast } = useAppContext();
   const navigate = useNavigate();
   function submitHandler(e) {
     e.preventDefault();
@@ -44,6 +44,7 @@ export default function CreateEventForm() {
         navigate("/");
       })
       .catch((e) => console.log(e));
+      showToast("Event been created successfully!!!")
   }
   return (
     <div className="h-full  flex justify-center items-center  w-full bg-pink-300">

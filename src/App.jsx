@@ -11,13 +11,10 @@ import Footer from "./layout/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
 import { useAppContext } from "./context/appContext";
+import Toast from "./components/Toast";
 
 function App() {
-
-
-  const {isAuth, events, getEvents} = useAppContext()
-
-
+  const { isAuth, isToast} = useAppContext();
 
   return (
     <div className="">
@@ -30,19 +27,17 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home  />} />
+        <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/login" element={<SignIn  />} />
+        <Route path="/login" element={<SignIn />} />
         <Route path="/events/:id" element={<EventDetails />} />
-        <Route
-          path="/create-event"
-          element={<ProtectedRoute  />}
-        >
-          <Route index element={<CreateEvent  />} />
+        <Route path="/create-event" element={<ProtectedRoute />}>
+          <Route index element={<CreateEvent />} />
         </Route>
 
         <Route path="*" element={<Error />} />
       </Routes>
+      {isToast && <Toast />}
       <Footer />
     </div>
   );
