@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import EventCard from '../components/EventCard'
 import axios from 'axios'
+import { useAppContext } from '../context/appContext'
 
-export default function Home({events}) {
+export default function Home() {
+
+  const {events, getEvents} = useAppContext()
+
+  if(events.length < 1) getEvents()
+
+
+  
 
 
 

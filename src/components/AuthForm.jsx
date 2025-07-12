@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import { useAppContext } from "../context/appContext";
 
-export default function AuthForm({ setIsAuth }) {
-  const [isRegiter, setIsRegiter] = useState(false);
+export default function AuthForm() {
+  const {setIsAuth} = useAppContext()
 
   const navigate = useNavigate();
-
   function submitHandler(e) {
     e.preventDefault();
     const emailInput = e.target.email.value;
@@ -64,7 +64,7 @@ export default function AuthForm({ setIsAuth }) {
           />
 
           <button className="btn btn-neutral mt-4">
-            {isRegiter ? "Create Account" : "Login"}
+          Login
           </button>
           <p>
             you can create your account now...

@@ -2,8 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
 import Alert from "./Alert";
+import { useAppContext } from "../context/appContext";
 
-export default function ProtectedRoute({isAuth}) {
+export default function ProtectedRoute() {
+  const {isAuth} = useAppContext()
   
   // const [isUser, setIsUser] = useState(false)
   // const [isError, setIsError] = useState(false)

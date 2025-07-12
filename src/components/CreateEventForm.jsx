@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router";
+import { useAppContext } from "../context/appContext";
 // {
 //   "title": "Event Title",
 //   "description": "Some Description for the Event",
@@ -9,7 +10,8 @@ import { useNavigate } from "react-router";
 //   "latitude": 8.404746955649602,
 //   "longitude": 49.01438194665317
 // }
-export default function CreateEventForm({setEvents}) {
+export default function CreateEventForm() {
+  const {getEvents} = useAppContext()
   const navigate = useNavigate()
   function submitHandler(e) {
     e.preventDefault();
@@ -40,7 +42,7 @@ export default function CreateEventForm({setEvents}) {
         
       )
       .then((x) => {
-        axios("http://localhost:3001/api/events").then(y => setEvents(y.data.results)).catch(e => console.error(e))
+        axios("http://localhost:3001/api/events?limit=1000").then(y => getEvents(y.data.results)).catch(e => console.error(e))
         navigate('/')})
       .catch((e) => console.log(e));
   }

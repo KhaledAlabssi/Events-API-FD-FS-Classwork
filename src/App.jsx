@@ -9,42 +9,38 @@ import Error from "./pages/NotFoundPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { FaAdjust } from "react-icons/fa";
 import axios from "axios";
+import { useAppContext } from "./context/appContext";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [isAuth, setIsAuth] = useState(false)
-  const [events, setEvents] = useState([])
 
-  useEffect(() => {
-  
-    axios("http://localhost:3001/api/events").then(x => setEvents(x.data.results)
-    
-    )
-  
-  },[])
+
+  const {isAuth, events, getEvents} = useAppContext()
+
+
 
   return (
     <div className="">
-      {isAuth ? 
-<div className="badge badge-success">Logged In</div>: 
-<div className="badge badge-error ">Logged Out</div>}
+      {isAuth ? (
+        <div className="badge badge-success">Logged In</div>
+      ) : (
+        <div className="badge badge-error ">Logged Out</div>
+      )}
 
       <Header />
 
-
-      
       <Routes>
-        <Route path="/" element={<Home events={events} />} />
+        <Route path="/" element={<Home  />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/login" element={<SignIn setIsAuth={setIsAuth}/>} />
+        <Route path="/login" element={<SignIn  />} />
         <Route path="/events/:id" element={<EventDetails />} />
-        <Route path="/create-event" element={<ProtectedRoute isAuth={isAuth} />}>
-        
-          <Route index element={<CreateEvent setEvents={setEvents} />} />
+        <Route
+          path="/create-event"
+          element={<ProtectedRoute  />}
+        >
+          <Route index element={<CreateEvent  />} />
         </Route>
-       
+
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
