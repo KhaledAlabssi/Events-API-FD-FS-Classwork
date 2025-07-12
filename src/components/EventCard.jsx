@@ -1,19 +1,16 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default function EventCard({
   title,
   date,
   location,
   descriptionSnippet,
+  itemId
 }) {
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
+     
       <div className="card-body">
         <h2 className="card-title">
           {title}
@@ -23,6 +20,7 @@ export default function EventCard({
         <div className="card-actions justify-end">
           <div className="badge badge-outline">Fashion</div>
           <div className="badge badge-outline">Products</div>
+          <Link to={`/events/${itemId}`}><button className="btn">Read more</button></Link>
         </div>
       </div>
     </div>

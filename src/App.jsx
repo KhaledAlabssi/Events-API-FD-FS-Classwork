@@ -12,17 +12,14 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
 import { useAppContext } from "./context/appContext";
 import Toast from "./components/Toast";
+import Loading from "./components/Loading";
 
 function App() {
-  const { isAuth, isToast} = useAppContext();
+  const { isAuth, isToast, isLoading} = useAppContext();
 
   return (
     <div className="">
-      {isAuth ? (
-        <div className="badge badge-success">Logged In</div>
-      ) : (
-        <div className="badge badge-error ">Logged Out</div>
-      )}
+      
 
       <Header />
 
@@ -37,6 +34,7 @@ function App() {
 
         <Route path="*" element={<Error />} />
       </Routes>
+      {isLoading && <Loading />}
       {isToast && <Toast />}
       <Footer />
     </div>

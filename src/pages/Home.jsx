@@ -11,6 +11,7 @@ export default function Home() {
       {events?.map((i, k) => (
         <EventCard
           key={k}
+          itemId={i.id}
           title={i.title}
           date={i.date}
           location={i.location}
