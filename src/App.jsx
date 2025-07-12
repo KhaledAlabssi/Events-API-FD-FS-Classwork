@@ -18,8 +18,11 @@ function App() {
   const { isToast, isLoading, isAlert } = useAppContext();
 
   return (
-    <div className="">
+    <div className="h-screen max-h-fit min-h-screen flex flex-col justify-between">
       <Header />
+
+      <main className=" flex-1 flex flex-col justify-center items-center">
+
 
     
       {isAlert && <AlertComponent />}
@@ -37,6 +40,7 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
       {isToast && <Toast />}
+      </main>
       <Footer />
     </div>
   );

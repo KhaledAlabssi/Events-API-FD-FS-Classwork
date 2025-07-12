@@ -3,7 +3,7 @@ import AuthForm from '../components/AuthForm'
 
 export default function SignUp() {
   return (
-    <div className='h-[550px]'>
+    <div className=''>
     
         <AuthForm  /></div>
   )

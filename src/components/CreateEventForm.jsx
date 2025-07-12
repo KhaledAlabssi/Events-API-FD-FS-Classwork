@@ -18,7 +18,7 @@ export default function CreateEventForm() {
     const t = JSON.parse(localStorage.getItem("userToken"));
     console.log(t);
 
-    const d = new Date();
+    const d = new Date(e.target.date.value);
 
     axios
       .post(
@@ -44,13 +44,14 @@ export default function CreateEventForm() {
         navigate("/");
       })
       .catch((e) => console.log(e));
-      showToast("Event been created successfully!!!")
+    showToast("Event been created successfully!!!");
   }
   return (
-    <div className="h-full  flex justify-center items-center  w-full bg-pink-300">
+    <div className="">
       <form onSubmit={submitHandler}>
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-          <label className="label">title</label>
+          <h2 className="card-title">Create New Event...</h2>
+          <label className="label">Title</label>
           <input
             type="text"
             className="input"
@@ -58,7 +59,7 @@ export default function CreateEventForm() {
             name="title"
           />
 
-          <label className="label">description</label>
+          <label className="label">Description</label>
           <input
             type="text"
             className="input"
@@ -66,13 +67,15 @@ export default function CreateEventForm() {
             name="description"
           />
 
+          <label className="label">Event Date</label>
+          <input
+            type="datetime-local"
+            className="input"
+            placeholder="description"
+            name="date"
+          />
+
           <button className="btn btn-neutral mt-4">create event</button>
-          <p>
-            you can create your account now...
-            {/* <button className="badge bg-primary" onClick={() => setIsRegiter(!isRegiter)}>
-          register
-        </button> */}
-          </p>
         </fieldset>
       </form>
     </div>

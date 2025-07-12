@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useAppContext } from "../context/appContext";
 
 export default function Header() {
   const {isAuth,signout} = useAppContext()
+  const location = useLocation()
   return (
     <div className="navbar bg-base-100 shadow-sm ">
       <div className="flex-1">
@@ -18,8 +19,8 @@ export default function Header() {
             {isAuth ?  
             <button onClick={signout} className="btn btn-primary">Sign Out</button>
             :
-            <Link className="btn btn-primary" to={"/login"}>
-              Login
+            <Link className="btn btn-primary" to={location.pathname == "/login" ? "/sign-up": "/login"}>
+              {location.pathname == "/login" ? "Register": "Login"}
             </Link>
             }
           </li>

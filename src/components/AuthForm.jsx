@@ -1,11 +1,14 @@
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useAppContext } from "../context/appContext";
 
 export default function AuthForm() {
   const { setIsAuth, showToast, showAlert, setIsLoading } = useAppContext();
 
+  const location = useLocation();
+
   const navigate = useNavigate();
+
   function submitHandler(e) {
     e.preventDefault();
     setIsLoading(true);
@@ -22,7 +25,6 @@ export default function AuthForm() {
 
           // save token to LS
           localStorage.setItem("userToken", JSON.stringify(x.data.token));
-
           setIsAuth(true);
           showToast("Welcome to you Event App!");
 
@@ -37,9 +39,12 @@ export default function AuthForm() {
       });
   }
   return (
-    <div className="h-full  flex justify-center items-center  w-full bg-gray-300">
+    <div className="">
       <form onSubmit={submitHandler}>
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+          <h2 className="card-title">
+            {location.pathname == "/login" ? "Login" : "Register"}
+          </h2>
           <label className="label">Email</label>
           <input
             type="email"
@@ -56,8 +61,9 @@ export default function AuthForm() {
             name="password"
           />
 
-          <button className="btn btn-neutral mt-4">Login</button>
-          <p>you can create your account now...</p>
+          <button className="btn btn-neutral mt-4">
+            {location.pathname == "/login" ? "Login" : "Register"}
+          </button>
         </fieldset>
       </form>
     </div>

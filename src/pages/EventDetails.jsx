@@ -16,10 +16,10 @@ export default function EventDetails() {
     <div className="flex justify-center p-8">
       <div className="card w-full max-w-2xl bg-base-100 shadow-sm">
         <div className="card-body">
-          <span className="badge badge-xs badge-warning">new</span>
+          <span className="badge badge-xs badge-success">new</span>
           <div className="flex justify-between">
             <h2 className="text-3xl font-bold">{event.title}</h2>
-            <span className="text-xl">{new Date(event.date).toLocaleString()}</span>
+            <span className="text-xl">{new Date(event.date).toLocaleDateString()}</span>
           </div>
           <p>{event.description}</p>
           <ul className="mt-6 flex flex-col gap-2 text-xs">

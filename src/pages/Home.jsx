@@ -7,7 +7,7 @@ export default function Home() {
   if (events.length < 1) getEvents();
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center p-8">
+    <div className="w-full flex flex-col md:flex-row gap-4 flex-wrap md:justify-center p-8">
       {events?.map((i, k) => (
         <EventCard
           key={k}
