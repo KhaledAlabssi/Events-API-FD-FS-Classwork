@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
@@ -10,10 +10,20 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { FaAdjust } from "react-icons/fa";
+import axios from "axios";
 
 function App() {
   const [count, setCount] = useState(0);
   const [isAuth, setIsAuth] = useState(false)
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+  
+    axios("http://localhost:3001/api/events").then(x => setEvents(x.data.results)
+    
+    )
+  
+  },[])
 
   return (
     <div className="">
@@ -26,13 +36,13 @@ function App() {
 
       
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home events={events} />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<SignIn setIsAuth={setIsAuth}/>} />
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/create-event" element={<ProtectedRoute isAuth={isAuth} />}>
         
-          <Route index element={<CreateEvent />} />
+          <Route index element={<CreateEvent setEvents={setEvents} />} />
         </Route>
        
         <Route path="*" element={<Error />} />
