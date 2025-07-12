@@ -3,11 +3,12 @@ import { useNavigate } from "react-router";
 import { useAppContext } from "../context/appContext";
 
 export default function AuthForm() {
-  const { setIsAuth, showToast } = useAppContext();
+  const { setIsAuth, showToast, showAlert, setIsLoading } = useAppContext();
 
   const navigate = useNavigate();
   function submitHandler(e) {
     e.preventDefault();
+    setIsLoading(true);
     const emailInput = e.target.email.value;
     const passwordInput = e.target.password.value;
     axios
@@ -23,12 +24,14 @@ export default function AuthForm() {
           localStorage.setItem("userToken", JSON.stringify(x.data.token));
 
           setIsAuth(true);
-          showToast("Welcome to you Event App!")
+          showToast("Welcome to you Event App!");
 
+          setIsLoading(false);
           navigate("/create-event");
         }
       })
       .catch((e) => {
+        showAlert("Email or password is not valid!");
         console.log("Hi folks");
         console.log("Error ");
       });

@@ -9,19 +9,21 @@ import Error from "./pages/NotFoundPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
-import axios from "axios";
 import { useAppContext } from "./context/appContext";
 import Toast from "./components/Toast";
 import Loading from "./components/Loading";
+import AlertComponent from "./components/AlertComponent";
 
 function App() {
-  const { isAuth, isToast, isLoading} = useAppContext();
+  const { isToast, isLoading, isAlert } = useAppContext();
 
   return (
     <div className="">
-      
-
       <Header />
+
+    
+      {isAlert && <AlertComponent />}
+      {isLoading && <Loading />}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,7 +36,6 @@ function App() {
 
         <Route path="*" element={<Error />} />
       </Routes>
-      {isLoading && <Loading />}
       {isToast && <Toast />}
       <Footer />
     </div>

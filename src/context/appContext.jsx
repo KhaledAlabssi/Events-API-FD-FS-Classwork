@@ -12,8 +12,21 @@ export const AppProvider = ({ children }) => {
   const [isToast, setIsToast] = useState(false);
   const [isToastMessage, setIsToastMessage] = useState("");
   const [events, setEvents] = useState([]);
+  const [isAlert, setIsAlert] = useState(false);
+  const [isAlertMessage, setIsAlertMessage] = useState("");
 
+  function showAlert (message) {
+    setIsAlert(true)
+    setIsAlertMessage(message)
 
+    setTimeout(() => {
+
+        setIsAlert(false)
+    setIsAlertMessage("message")
+
+        
+    }, 5000);
+  }
 
   const navigate = useNavigate()
   function showToast (message) {
@@ -43,7 +56,7 @@ export const AppProvider = ({ children }) => {
   }
 
   return (
-    <AppContext.Provider value={{ events, signout, getEvents, isAuth, setIsAuth, showToast, isToast, isToastMessage }}>
+    <AppContext.Provider value={{ showAlert, isAlert, isAlertMessage, events, signout, getEvents, isAuth, setIsAuth, showToast, isToast, isToastMessage, setIsLoading ,isLoading}}>
       {children}
     </AppContext.Provider>
   );
