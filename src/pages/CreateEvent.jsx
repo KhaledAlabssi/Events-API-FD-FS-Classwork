@@ -1,12 +1,11 @@
-import React from 'react'
-import CreateEventForm from '../components/CreateEventForm'
+import React from "react";
+import CreateEventForm from "../components/CreateEventForm";
 
 export default function CreateEvent() {
   return (
-    <div>CreateEvent
-
-    <CreateEventForm  />
-
+    <div>
+      CreateEvent
+      <CreateEventForm />
     </div>
-  )
+  );
 }

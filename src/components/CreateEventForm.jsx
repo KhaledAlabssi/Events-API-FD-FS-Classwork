@@ -11,17 +11,14 @@ import { useAppContext } from "../context/appContext";
 //   "longitude": 49.01438194665317
 // }
 export default function CreateEventForm() {
-  const {getEvents} = useAppContext()
-  const navigate = useNavigate()
+  const { getEvents } = useAppContext();
+  const navigate = useNavigate();
   function submitHandler(e) {
     e.preventDefault();
     const t = JSON.parse(localStorage.getItem("userToken"));
     console.log(t);
-    
-    
+
     const d = new Date();
-
-
 
     axios
       .post(
@@ -36,14 +33,16 @@ export default function CreateEventForm() {
         },
         {
           headers: {
-            Authorization: `Bearer ${t}`
-          }
+            Authorization: `Bearer ${t}`,
+          },
         }
-        
       )
       .then((x) => {
-        axios("http://localhost:3001/api/events?limit=1000").then(y => getEvents(y.data.results)).catch(e => console.error(e))
-        navigate('/')})
+        axios("http://localhost:3001/api/events?limit=1000")
+          .then((y) => getEvents(y.data.results))
+          .catch((e) => console.error(e));
+        navigate("/");
+      })
       .catch((e) => console.log(e));
   }
   return (

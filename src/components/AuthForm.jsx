@@ -1,10 +1,9 @@
 import axios from "axios";
-import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useAppContext } from "../context/appContext";
 
 export default function AuthForm() {
-  const {setIsAuth} = useAppContext()
+  const { setIsAuth } = useAppContext();
 
   const navigate = useNavigate();
   function submitHandler(e) {
@@ -37,16 +36,6 @@ export default function AuthForm() {
     <div className="h-full  flex justify-center items-center  w-full bg-gray-300">
       <form onSubmit={submitHandler}>
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-          {/* {isRegiter && (
-            <>
-              <label className="label">Name</label>
-              <input type="text" className="input" placeholder="Name" />
-            </>
-          )} */}
-          {/* <legend className="fieldset-legend">
-            {isRegiter ? "Register" : "Login"}
-          </legend> */}
-
           <label className="label">Email</label>
           <input
             type="email"
@@ -63,15 +52,8 @@ export default function AuthForm() {
             name="password"
           />
 
-          <button className="btn btn-neutral mt-4">
-          Login
-          </button>
-          <p>
-            you can create your account now...
-            {/* <button className="badge bg-primary" onClick={() => setIsRegiter(!isRegiter)}>
-          register
-        </button> */}
-          </p>
+          <button className="btn btn-neutral mt-4">Login</button>
+          <p>you can create your account now...</p>
         </fieldset>
       </form>
     </div>
